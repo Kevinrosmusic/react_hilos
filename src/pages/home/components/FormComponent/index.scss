@@ -1,0 +1,18 @@
+@use "../../../../app.scss" as *;
+
+.btn {
+    background-color: #1221f0;
+    color: #fff;
+    width: 10rem;
+    height: 2.5rem;
+    border: none;
+    cursor: pointer;
+    &:hover {
+        background-color: #0c18c2bd;
+        color: #fff;
+    }
+    &:disabled {
+        background-color: #9b9b9b;
+        color: #ffffff;
+    }
+}
