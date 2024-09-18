@@ -3,3 +3,97 @@
 .mt-1 {
     margin-top: 1rem;
 }
+
+.flexbox__header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    box-sizing: border-box;
+    margin: 0px -10px;
+}
+
+.content__header {
+    color: #242424;
+    font-weight: 600;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 10px;
+}
+
+@include mobile-xs {
+    .card {
+        label {
+            font-size: 0.5rem;
+        }
+        span {
+            font-size: 0.5rem;
+        }
+    }
+}
+
+@include mobile-sm {
+    .card {
+        label {
+            font-size: 0.65rem;
+        }
+        span {
+            font-size: 0.65rem;
+        }
+    }
+}
+@include mobile-md {
+    .card {
+        label {
+            font-size: 0.75rem;
+        }
+        span {
+            font-size: 0.75rem;
+        }
+    }
+}
+
+@include tablet-xs {
+    .card {
+        label {
+            font-size: 0.8rem;
+        }
+        span {
+            font-size: 0.8rem;
+        }
+    }
+    .item__header {
+        box-sizing: border-box;
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 0px 10px;
+    }
+}
+
+@include tablet {
+    .item__header {
+        box-sizing: border-box;
+        width: 50%;
+        margin-bottom: 20px;
+        padding: 0px 10px;
+    }
+}
+
+@include desktop {
+    .item__header {
+        box-sizing: border-box;
+        width: 50%;
+        margin-bottom: 20px;
+        padding: 0px 10px;
+    }
+}
+
+@include large {
+    .item__header {
+        box-sizing: border-box;
+        width: 50%;
+        margin-bottom: 20px;
+        padding: 0px 10px;
+    }
+}

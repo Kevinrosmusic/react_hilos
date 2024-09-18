@@ -1,16 +1,15 @@
 /* eslint-disable react/prop-types */
 import { useParams } from "react-router-dom";
-import axiosInstance from "../../../../api/axios";
 import "./index.scss";
 export const FormComponent = ({ agreement, body }) => {
     const { cfskey, cfstoken } = useParams();
     const { forms, accept_button_text } = agreement;
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        axiosInstance.post("/threads/token/{cfskey}/{cfstoken}}/agreement/true", body).then((response) => {
-            console.log(response);
-        });
+        // e.preventDefault();
+        // axiosInstance.post("/threads/token/{cfskey}/{cfstoken}}/agreement/true", body).then((response) => {
+        //     console.log(response);
+        // });
         alert("Formulario enviado");
     };
 
@@ -28,7 +27,7 @@ export const FormComponent = ({ agreement, body }) => {
                                     {question.options.map((option) => (
                                         <div className="mt-2" key={option.oid}>
                                             <label htmlFor="">{option.label}</label>
-                                            <input type={question.type === "CHECK" ? "checkbox" : question.type} className="form-control" />
+                                            <input type={question.type === "CHECK" ? "checkbox" : question.type} className="form-control" disabled={body.closed ? true : false} />
                                         </div>
                                     ))}
                                 </div>

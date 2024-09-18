@@ -10,24 +10,40 @@ export const HeaderComponent = ({ setShowHistorical, data, showHistorical }) => 
     return (
         <div className="card">
             <div className="card__body">
-                <div className="row">
-                    <div className="labels columns">
-                        <label>Código CFS:</label>
-                        <span>{data.cfscode}</span>
+                <div className="flexbox__header">
+                    <div className="item__header">
+                        <div className="content__header">
+                            <div className="labels columns">
+                                <label>Código CFS:</label>
+                                <span>{data.cfscode}</span>
+                            </div>
+                        </div>
                     </div>
-                    <div className="labels columns">
-                        <label>Emisor del hilo:</label>
-                        <span>{data.sender.user}</span>
+                    <div className="item__header ">
+                        <div className="content__header">
+                            <div className="labels columns">
+                                <label>Emisor del hilo:</label>
+                                <span>{data.sender.user}</span>
+                            </div>
+                        </div>
                     </div>
-                    <div className="labels columns">
-                        <label>Destinatario del hilo:</label>
-                        <span>{data.recipient.address}</span>
+                    <div className="item__header ">
+                        <div className="content__header">
+                            <div className="labels columns">
+                                <label>Destinatario del hilo:</label>
+                                <span>{data.recipient.address}</span>
+                            </div>
+                        </div>
                     </div>
-                    <div className="labels columns ">
-                        <label>Histórico de estados:</label>
-                        <div className="card card--clickable" onClick={handleShowHistorical}>
-                            <div className="card__body">
-                                <HistoryComponent history={data.history[0]} />
+                    <div className="item__header ">
+                        <div className="content__header">
+                            <div className="labels columns ">
+                                <label>Histórico de estados:</label>
+                                <div className="card card--clickable" onClick={handleShowHistorical}>
+                                    <div className="card__body">
+                                        <HistoryComponent history={data.history[0]} />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
