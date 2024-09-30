@@ -1,16 +1,20 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/prop-types */
 import { useParams } from "react-router-dom";
+import useAxios from "../../../../hooks/useFetch";
 import "./index.scss";
 export const FormComponent = ({ agreement, body }) => {
     const { cfskey, cfstoken } = useParams();
     const { forms, accept_button_text } = agreement;
 
     const handleSubmit = (e) => {
-        // e.preventDefault();
-        // axiosInstance.post("/threads/token/{cfskey}/{cfstoken}}/agreement/true", body).then((response) => {
-        //     console.log(response);
-        // });
-        alert("Formulario enviado");
+        e.preventDefault();
+
+        const { data } = useAxios(`/threads/token/${cfskey}/${cfstoken}/agreement/true`, "POST", body);
+
+        if (data) {
+            location.reload();
+        }
     };
 
     return (

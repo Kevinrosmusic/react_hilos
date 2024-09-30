@@ -11,7 +11,7 @@ export const HomePage = () => {
 
     const { data, error, loading } = useAxios(`/threads/token/${cfskey}/${cfstoken}`);
 
-    const [showHistorical, setShowHistorical] = useState(true);
+    const [showHistorical, setShowHistorical] = useState(false);
 
     if (loading) {
         return (
@@ -23,7 +23,15 @@ export const HomePage = () => {
         );
     }
 
-    if (error) return <p>Error: {error.message}</p>;
+    if (error) {
+        return (
+            <div className="spinner">
+                <span className="spinner__inner__1"></span>
+                <span className="spinner__inner__2"></span>
+                <span className="spinner__inner__3"></span>
+            </div>
+        );
+    }
 
     return (
         <div className="container">
